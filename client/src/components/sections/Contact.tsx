@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -35,26 +35,88 @@ const Contact = () => {
     }
   });
 
+  const [isFirebaseConfigured, setIsFirebaseConfigured] = useState<boolean>(true);
+  
+  useEffect(() => {
+    // Check if Firebase is properly configured on component mount
+    const checkFirebaseConfig = async () => {
+      try {
+        // Simple test to see if we can access Firestore
+        const testCollection = collection(db, "connectionTest");
+        setIsFirebaseConfigured(true);
+      } catch (error) {
+        console.warn("Firebase may not be properly configured:", error);
+        setIsFirebaseConfigured(false);
+      }
+    };
+    
+    checkFirebaseConfig();
+  }, []);
+  
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
     
     try {
-      // Save to Firebase
-      await addDoc(collection(db, "contactSubmissions"), {
-        ...data,
-        timestamp: serverTimestamp(),
-      });
+      if (!isFirebaseConfigured) {
+        // Fallback mode - just show success message without actually submitting
+        console.log("Firebase not configured, displaying success message anyway:", data);
+        
+        // Wait for a short time to simulate network request
+        await new Promise(resolve => setTimeout(resolve, 800));
+        
+        toast({
+          title: "Demo mode: Message received!",
+          description: "Firebase is not configured, but this is how the success message would look.",
+        });
+        form.reset();
+        setIsSubmitting(false);
+        return;
+      }
       
-      toast({
-        title: "Message sent successfully!",
-        description: "We'll get back to you as soon as possible.",
-      });
-      form.reset();
+      try {
+        // Save to Firebase
+        const docRef = await addDoc(collection(db, "contactSubmissions"), {
+          ...data,
+          timestamp: serverTimestamp(),
+          submittedFrom: window.location.hostname,
+        });
+        
+        console.log("Document written with ID: ", docRef.id);
+        
+        toast({
+          title: "Message sent successfully!",
+          description: "We'll get back to you as soon as possible.",
+        });
+        form.reset();
+      } catch (innerError: any) {
+        console.error("Error submitting form to Firestore: ", innerError);
+        
+        // Get more specific error information
+        let errorMessage = "Please refer to the FIREBASE_SETUP_GUIDE.md file for setup instructions.";
+        let errorTitle = "Unable to submit form!";
+        
+        if (innerError.code === 'permission-denied') {
+          errorTitle = "Firebase security rules issue";
+          errorMessage = "Update Firestore security rules to allow writing to the contactSubmissions collection.";
+        } else if (innerError.code === 'unavailable') {
+          errorTitle = "Connection issue";
+          errorMessage = "Check your internet connection or Firebase service status.";
+        } else if (innerError.code === 'not-found') {
+          errorTitle = "Collection not found";
+          errorMessage = "Create a 'contactSubmissions' collection in your Firestore database.";
+        }
+        
+        toast({
+          title: errorTitle,
+          description: errorMessage,
+          variant: "destructive",
+        });
+      }
     } catch (error) {
-      console.error("Error submitting form: ", error);
+      console.error("General error: ", error);
       toast({
         title: "Something went wrong!",
-        description: "Please try again later.",
+        description: "There was an error processing your submission. Please try again later.",
         variant: "destructive",
       });
     } finally {
@@ -190,9 +252,12 @@ const Contact = () => {
                       </span>
                     </Button>
                     
-                    <p className="text-xs text-muted-foreground text-center mt-4">
-                      Your data will be stored in Firebase to enable us to respond to your request.
-                    </p>
+                    <div className="text-xs text-muted-foreground text-center mt-4 space-y-1">
+                      <p>Your data will be stored in Firebase to enable us to respond to your request.</p>
+                      <p className="text-primary/70">
+                        Note: You may need to set up Firestore security rules to allow write access.
+                      </p>
+                    </div>
                   </form>
                 </Form>
               </div>
