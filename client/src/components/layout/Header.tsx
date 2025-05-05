@@ -78,7 +78,7 @@ const Header = () => {
                 <Moon className="h-5 w-5" />
               )}
             </Button>
-            <Button asChild className="bg-primary hover:bg-primary/90 text-white font-accent">
+            <Button asChild className="font-accent">
               <a href="#contact">Start a Project</a>
             </Button>
           </nav>
@@ -140,7 +140,7 @@ const Header = () => {
               >
                 Testimonials
               </a>
-              <Button asChild className="bg-primary hover:bg-primary/90 text-white font-accent w-fit">
+              <Button asChild className="font-accent w-fit">
                 <a href="#contact" onClick={closeMobileMenu}>
                   Start a Project
                 </a>

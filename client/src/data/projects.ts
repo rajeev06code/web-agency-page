@@ -1,3 +1,10 @@
+import image from "../assets/images/cake.jpeg"
+import image2 from "../assets/images/clothing.jpeg"
+import image3 from "../assets/images/grocerymob.jpeg"
+import image4 from "../assets/images/schedul.png"
+import image5 from "../assets/images/cart.png"
+import image6 from "../assets/images/dashboard.png"
+
 export interface Project {
   id: string;
   title: string;
@@ -12,32 +19,64 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "ecommerce-platform",
-    title: "E-commerce Platform",
+    title: "Online Bakery Shop",
     description: "A complete e-commerce solution with modern UX",
     category: "web",
     categoryLabel: "Web App",
     categoryColor: "bg-primary",
-    imageSrc: "https://images.unsplash.com/photo-1481487196290-c152efe083f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&h=400&q=80",
+    imageSrc: image,
     caseStudyUrl: "#"
   },
   {
     id: "health-tracker",
-    title: "Health Tracker",
+    title: "Indian Clothing Brand ",
     description: "Mobile app for tracking health and fitness goals",
     category: "mobile",
     categoryLabel: "Mobile App",
     categoryColor: "bg-accent",
-    imageSrc: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&h=400&q=80",
+    imageSrc:image2,
     caseStudyUrl: "#"
   },
   {
     id: "finance-dashboard",
-    title: "Finance Dashboard",
-    description: "Intuitive dashboard for personal finance management",
+    title: "Daily Groceries Online Shop",
+    description: "Intuitive shop for daily use",
     category: "ui-ux",
     categoryLabel: "UI/UX Design",
     categoryColor: "bg-secondary",
-    imageSrc: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&h=400&q=80",
+    imageSrc:image3,
     caseStudyUrl: "#"
-  }
+  },
+  {
+    id: "customization",
+    title: "Customization ? No Worry",
+    description: "We create your ideas.",
+    category: "ui-ux",
+    categoryLabel: "UI/UX Design",
+    categoryColor: "bg-secondary",
+    imageSrc:image4,
+    caseStudyUrl: "#"
+  },
+  {
+    id: "seamless",
+    title: "Seamless Checkouts",
+    description: "Supports all third party payment gateway",
+    category: "web",
+    categoryLabel: "Web App",
+    categoryColor: "bg-secondary",
+    imageSrc:image5,
+    caseStudyUrl: "#"
+  },
+  {
+    id: "admin",
+    title: "Grocery Admin Control",
+    description: "Store and Admin Panel go side by side.",
+    category: "web",
+    categoryLabel: "Web App",
+    categoryColor: "bg-secondary",
+    imageSrc:image6,
+    caseStudyUrl: "#"
+  },
+ 
+  
 ];

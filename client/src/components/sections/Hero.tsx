@@ -31,7 +31,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           <div className="w-full lg:w-1/2 animate-fade-in">
-            <div className="mb-4 inline-block">
+            <div className="mb-4 inline-block mt-28 lg:mt-0 md:mt-0">
               <span className="px-3 py-1 border border-primary text-sm font-mono tracking-wider animate-pulse">NEXTGEN DIGITAL AGENCY</span>
             </div>
             <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tight leading-none">

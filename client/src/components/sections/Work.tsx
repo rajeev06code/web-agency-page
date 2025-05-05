@@ -176,12 +176,12 @@ const Work = () => {
           <Button 
             asChild 
             variant="outline" 
-            className="border-primary hover:bg-primary/5 text-primary font-accent group"
+            className="border-primary font-accent group"
           >
-            <a href="#" className="flex items-center px-8 py-6">
-              <Plus className="mr-2 h-5 w-5 group-hover:rotate-90 transition-transform duration-300" /> 
-              View all projects
-            </a>
+            <p  className="flex items-center px-8 py-6">
+              {/* <Plus className="mr-2 h-5 w-5 group-hover:rotate-90 transition-transform duration-300" />  */}
+              Many more..
+            </p>
           </Button>
         </div>
       </div>
