@@ -74,9 +74,9 @@ const Contact = () => {
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
 
-    const serviceId = "service_pycl0vu";
-    const templateId = "template_tb98aks";
-    const publicKey = "K2gZ0ocsICbNSJjI2";
+    const serviceId = import.meta.env.VITE_EMAIL_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAIL_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAIL_PUBLIC_ID;
 
     // Create a new object that contains dynamic template params
     const templateParams = {
@@ -337,7 +337,7 @@ const Contact = () => {
                   <div>
                     <h4 className="font-bold mb-1">Email</h4>
                     <a
-                      href="mailto:hello@DevDoctors.com"
+                      href="mailto:hello@PixelBuilders.com"
                       className="text-primary hover:underline transition-all"
                     >
                      rajeevansh.sikkim@gmail.com

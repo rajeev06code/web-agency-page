@@ -35,8 +35,8 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
             <Link href="/" className="text-2xl font-black tracking-tight">
-              <span className="text-primary">    <Code className="h-7 w-7 inline items-center mr-1 mb-1"/>Dev</span>
-              <span className="text-accent">Doctors</span>
+              <span className="text-primary">    <Code className="h-5 w-5 inline items-center mr-1 "/>pixel</span>
+              <span className="text-accent">Builders</span>
             </Link>
           </div>
 

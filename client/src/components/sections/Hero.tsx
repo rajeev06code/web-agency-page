@@ -1,9 +1,9 @@
 import { useTheme } from "@/components/ThemeProvider";
 import { Button } from "@/components/ui/button";
 import { FaGoogle, FaMicrosoft, FaAmazon, FaApple } from "react-icons/fa";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Cpu, Database, Monitor, Smartphone } from "lucide-react";
 import React, { useEffect, useState } from "react";
-import heroImage from "../../assets/images/hero.png"
+import heroImage from "../../assets/images/hero2.png"
 
 const Hero = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -59,10 +59,10 @@ const Hero = () => {
             <div className="mt-16 flex items-center animate-slide-up animate-delay-400">
               <div className="h-px bg-border flex-grow mr-4"></div>
               <div className="flex items-center gap-6">
-                <FaGoogle className="h-5 w-auto text-muted-foreground opacity-70 hover:opacity-100 transition-all" />
-                <FaMicrosoft className="h-5 w-auto text-muted-foreground opacity-70 hover:opacity-100 transition-all" />
-                <FaAmazon className="h-5 w-auto text-muted-foreground opacity-70 hover:opacity-100 transition-all" />
-                <FaApple className="h-5 w-auto text-muted-foreground opacity-70 hover:opacity-100 transition-all" />
+                <Monitor className="h-5 w-auto text-muted-foreground opacity-70 hover:opacity-100 transition-all" />
+                <Smartphone className="h-5 w-auto text-muted-foreground opacity-70 hover:opacity-100 transition-all" />
+                <Database className="h-5 w-auto text-muted-foreground opacity-70 hover:opacity-100 transition-all" />
+                <Cpu className="h-5 w-auto text-muted-foreground opacity-70 hover:opacity-100 transition-all" />
               </div>
               <div className="h-px bg-border flex-grow ml-4"></div>
             </div>
@@ -75,7 +75,7 @@ const Hero = () => {
                 <div className="w-full h-full bg-black/50 backdrop-blur-sm p-6 overflow-hidden font-mono text-xs text-primary-foreground opacity-20">
                   <div className="animate-slide-up">
                     {'{'} <br />
-                    &nbsp;&nbsp;"agency": "DevDoctors", <br />
+                    &nbsp;&nbsp;"agency": "pixelBuilders", <br />
                     &nbsp;&nbsp;"expertise": ["web", "mobile", "ui/ux"], <br />
                     &nbsp;&nbsp;"projects": 50+, <br />
                     &nbsp;&nbsp;"clients": 25+, <br />

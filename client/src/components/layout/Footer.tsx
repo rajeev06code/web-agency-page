@@ -11,8 +11,8 @@ const Footer = () => {
           <div>
             <Link href="/" className="text-2xl  font-black tracking-tight mb-6 inline-block">
         
-            <span className="text-primary"> <Code className="h-7 w-7 inline items-center mr-1 mb-1"/>Dev</span>
-              <span className="text-accent">Doctors   </span>
+            <span className="text-primary"> <Code className="h-5 w-5 inline items-center mr-1 "/>pixel</span>
+              <span className="text-accent">Builders </span>
             </Link>
             <p className="opacity-80 mb-6">
               Creating exceptional digital experiences for forward-thinking businesses.
@@ -70,7 +70,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-primary/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="opacity-60 mb-4 md:mb-0">© {new Date().getFullYear()} DevDoctors. All rights reserved.</p>
+          <p className="opacity-60 mb-4 md:mb-0">© {new Date().getFullYear()} pixelbuilders. All rights reserved.</p>
           <div className="flex space-x-6">
             <a href="#" className="opacity-60 hover:opacity-100 hover:text-primary transition-all">Privacy Policy</a>
             <a href="#" className="opacity-60 hover:opacity-100 hover:text-primary transition-all">Terms of Service</a>

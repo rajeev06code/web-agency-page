@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, SquareUser, Code, Terminal, Cpu } from "lucide-react";
 import React, { useRef, useEffect } from "react";
+import heroImage from "../../assets/images/hero.png"
 
 const StatItem = ({ value, label, index }: { value: string, label: string, index: number }) => {
   const itemRef = useRef<HTMLDivElement>(null);
@@ -142,9 +143,9 @@ const About = () => {
                 <div className="absolute inset-0 grid-pattern opacity-30 mix-blend-overlay"></div>
                 
                 <img 
-                  src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=900&q=80" 
+                  src={heroImage} 
                   alt="Our team working together" 
-                  className="w-full h-auto aspect-[4/5] object-cover filter grayscale hover:grayscale-0 transition-all duration-1000" 
+                  className="w-full h-auto  object-cover filter grayscale hover:grayscale-0 transition-all duration-1000" 
                 />
                 
                 {/* Overlays */}
@@ -152,7 +153,7 @@ const About = () => {
                 
                 {/* Caption */}
                 <div className="absolute bottom-0 left-0 p-6">
-                  <span className="text-xs font-mono text-white/90 bg-black/50 backdrop-blur-sm px-3 py-1 inline-block mb-3">TEAM DevDoctors</span>
+                  <span className="text-xs font-mono text-white/90 bg-black/50 backdrop-blur-sm px-3 py-1 inline-block mb-3">TEAM PixelBuilders</span>
                   <h3 className="text-white/90 text-lg font-bold">Crafting digital experiences</h3>
                 </div>
               </div>
@@ -164,7 +165,7 @@ const About = () => {
           
           <div ref={textRef} className="opacity-0">
             <p className="text-lg mb-6 leading-relaxed">
-              DevDoctors is a team of passionate technologists creating exceptional digital products. We combine technical expertise with strategic thinking to solve complex challenges.
+              pixelBuilders is a team of passionate technologists creating exceptional digital products. We combine technical expertise with strategic thinking to solve complex challenges.
             </p>
             <p className="text-muted-foreground mb-10 leading-relaxed">
               we've helped startups and established businesses accelerate their digital transformation journeys. Our focus on innovation and quality has earned us the trust of clients across industries.
