@@ -74,7 +74,7 @@ const Hero = () => {
                 <div className="w-full h-full bg-black/50 backdrop-blur-sm p-6 overflow-hidden font-mono text-xs text-primary-foreground opacity-20">
                   <div className="animate-slide-up">
                     {'{'} <br />
-                    &nbsp;&nbsp;"agency": "NexDev", <br />
+                    &nbsp;&nbsp;"agency": "DevDoctors", <br />
                     &nbsp;&nbsp;"expertise": ["web", "mobile", "ui/ux"], <br />
                     &nbsp;&nbsp;"projects": 50+, <br />
                     &nbsp;&nbsp;"clients": 25+, <br />

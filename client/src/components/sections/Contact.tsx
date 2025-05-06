@@ -337,7 +337,7 @@ const Contact = () => {
                   <div>
                     <h4 className="font-bold mb-1">Email</h4>
                     <a
-                      href="mailto:hello@nexdev.com"
+                      href="mailto:hello@DevDoctors.com"
                       className="text-primary hover:underline transition-all"
                     >
                      rajeevansh.sikkim@gmail.com

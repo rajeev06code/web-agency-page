@@ -12,7 +12,7 @@ export interface Testimonial {
 export const testimonials: Testimonial[] = [
   {
     id: "1",
-    content: "NexDev exceeded our expectations in every way. They not only delivered a stunning website but also provided valuable insights that improved our business strategy.",
+    content: "DevDoctors exceeded our expectations in every way. They not only delivered a stunning website but also provided valuable insights that improved our business strategy.",
     author: {
       name: "Sarah Johnson",
       role: "CEO",
@@ -22,7 +22,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: "2",
-    content: "Working with NexDev was a game-changer for our business. Their mobile app development expertise helped us reach new customers and streamline our operations.",
+    content: "Working with DevDoctors was a game-changer for our business. Their mobile app development expertise helped us reach new customers and streamline our operations.",
     author: {
       name: "Michael Chen",
       role: "Founder",
@@ -32,7 +32,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: "3",
-    content: "The team at NexDev truly understands what makes a great user experience. They transformed our complex data into an intuitive dashboard that our customers love using.",
+    content: "The team at DevDoctors truly understands what makes a great user experience. They transformed our complex data into an intuitive dashboard that our customers love using.",
     author: {
       name: "Amanda Perkins",
       role: "Product Manager",

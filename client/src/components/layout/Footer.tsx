@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Twitter, Instagram, Linkedin, Github } from "lucide-react";
+import { ArrowRight,Code, Twitter, Instagram, Linkedin, Github } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -9,9 +9,10 @@ const Footer = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <Link href="/" className="text-2xl font-black tracking-tight mb-6 inline-block">
-              <span className="text-primary">Nex</span>
-              <span className="text-accent">Dev</span>
+            <Link href="/" className="text-2xl  font-black tracking-tight mb-6 inline-block">
+        
+            <span className="text-primary"> <Code className="h-7 w-7 inline items-center mr-1 mb-1"/>Dev</span>
+              <span className="text-accent">Doctors   </span>
             </Link>
             <p className="opacity-80 mb-6">
               Creating exceptional digital experiences for forward-thinking businesses.
@@ -69,7 +70,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-primary/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="opacity-60 mb-4 md:mb-0">© {new Date().getFullYear()} NexDev. All rights reserved.</p>
+          <p className="opacity-60 mb-4 md:mb-0">© {new Date().getFullYear()} DevDoctors. All rights reserved.</p>
           <div className="flex space-x-6">
             <a href="#" className="opacity-60 hover:opacity-100 hover:text-primary transition-all">Privacy Policy</a>
             <a href="#" className="opacity-60 hover:opacity-100 hover:text-primary transition-all">Terms of Service</a>

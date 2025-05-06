@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { useTheme } from "@/components/ThemeProvider";
-import { Sun, Moon, Menu } from "lucide-react";
+import { Sun, Moon, Menu, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Header = () => {
@@ -35,8 +35,8 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
             <Link href="/" className="text-2xl font-black tracking-tight">
-              <span className="text-primary">Nex</span>
-              <span className="text-accent">Dev</span>
+              <span className="text-primary">    <Code className="h-7 w-7 inline items-center mr-1 mb-1"/>Dev</span>
+              <span className="text-accent">Doctors</span>
             </Link>
           </div>
 

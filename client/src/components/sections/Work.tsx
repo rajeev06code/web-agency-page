@@ -67,7 +67,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0], index: n
             <p className="text-white/80 text-sm">{project.description}</p>
           </div>
         </div>
-        
+{/*         
         <div className={`absolute inset-0 bg-primary/5 backdrop-blur-0 opacity-0 transition-opacity duration-500 ${hovered ? 'opacity-100' : ''} flex items-center justify-center`}>
           <a 
             href={project.caseStudyUrl} 
@@ -75,7 +75,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0], index: n
           >
             <ArrowUpRight className="h-8 w-8" />
           </a>
-        </div>
+        </div> */}
       </div>
       
       <div className="mt-6 mb-12 flex justify-between items-center">

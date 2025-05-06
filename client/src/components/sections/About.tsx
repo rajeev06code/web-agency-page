@@ -152,8 +152,8 @@ const About = () => {
                 
                 {/* Caption */}
                 <div className="absolute bottom-0 left-0 p-6">
-                  <span className="text-xs font-mono text-white/90 bg-black/50 backdrop-blur-sm px-3 py-1 inline-block mb-3">TEAM NEXDEV</span>
-                  <h3 className="text-white/90 text-lg font-bold">Crafting digital experiences since 2018</h3>
+                  <span className="text-xs font-mono text-white/90 bg-black/50 backdrop-blur-sm px-3 py-1 inline-block mb-3">TEAM DevDoctors</span>
+                  <h3 className="text-white/90 text-lg font-bold">Crafting digital experiences</h3>
                 </div>
               </div>
               
@@ -164,17 +164,17 @@ const About = () => {
           
           <div ref={textRef} className="opacity-0">
             <p className="text-lg mb-6 leading-relaxed">
-              NexDev is a team of passionate technologists creating exceptional digital products. We combine technical expertise with strategic thinking to solve complex challenges.
+              DevDoctors is a team of passionate technologists creating exceptional digital products. We combine technical expertise with strategic thinking to solve complex challenges.
             </p>
             <p className="text-muted-foreground mb-10 leading-relaxed">
-              Founded in 2018, we've helped startups and established businesses accelerate their digital transformation journeys. Our focus on innovation and quality has earned us the trust of clients across industries.
+              we've helped startups and established businesses accelerate their digital transformation journeys. Our focus on innovation and quality has earned us the trust of clients across industries.
             </p>
             
             <div className="grid grid-cols-2 gap-6 mb-12">
-              <StatItem value="50+" label="Projects delivered" index={0} />
-              <StatItem value="25+" label="Happy clients" index={1} />
-              <StatItem value="15" label="Team members" index={2} />
-              <StatItem value="5+" label="Years experience" index={3} />
+              <StatItem value="5+" label="Projects delivered" index={0} />
+              <StatItem value="10+" label="Happy clients" index={1} />
+              <StatItem value="5" label="Team members" index={2} />
+              <StatItem value="3+" label="Years experience" index={3} />
             </div>
             
             <h3 className="text-2xl font-bold mb-8 animate-slide-up animate-delay-300">Our values</h3>
