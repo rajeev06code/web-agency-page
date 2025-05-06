@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { FaGoogle, FaMicrosoft, FaAmazon, FaApple } from "react-icons/fa";
 import { ChevronDown } from "lucide-react";
 import React, { useEffect, useState } from "react";
+import heroImage from "../../assets/images/hero.png"
 
 const Hero = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -94,7 +95,7 @@ const Hero = () => {
                     </div>
                   </div>
                   <img
-                    src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=600&q=80"
+                    src={heroImage}
                     alt="Digital workspace"
                     className="w-full h-auto filter grayscale hover:grayscale-0 transition-all duration-1000"
                   />
