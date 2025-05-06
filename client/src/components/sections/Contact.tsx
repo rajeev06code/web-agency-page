@@ -340,7 +340,7 @@ const Contact = () => {
                       href="mailto:hello@PixelBuilders.com"
                       className="text-primary hover:underline transition-all"
                     >
-                     rajeevansh.sikkim@gmail.com
+                     support@pixelbuilders.in
                     </a>
                   </div>
                 </div>

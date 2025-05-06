@@ -2,12 +2,14 @@ import { useState, useRef, useEffect } from "react";
 import { projects } from "@/data/projects";
 import { ArrowRight, ArrowUpRight, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import CaseStudyModal from "./CaseStudyModal";
 
 type CategoryFilter = 'all' | 'web' | 'mobile' | 'ui-ux';
 
 const ProjectCard = ({ project, index }: { project: typeof projects[0], index: number }) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const [hovered, setHovered] = useState(false);
+  const [isCaseStudyOpen, setIsCaseStudyOpen] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -32,66 +34,65 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0], index: n
   }, []);
 
   return (
-    <div 
-      ref={cardRef}
-      className="group opacity-0"
-      style={{ animationDelay: `${200 + index * 150}ms` }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      <div className="relative overflow-hidden border border-primary/10">
-        <div className="absolute top-0 left-0 p-4 z-10">
-          <span className="text-xs font-mono bg-black/50 backdrop-blur-sm text-white px-3 py-1 inline-block">
-            {project.categoryLabel}
-          </span>
-        </div>
-        
-        <div className="absolute bottom-0 right-0 p-4 z-10">
-          <span className="font-mono text-xs bg-black/50 backdrop-blur-sm text-white px-3 py-1 inline-block">
-            0{index + 1}
-          </span>
-        </div>
-        
-        <img 
-          src={project.imageSrc} 
-          alt={project.title} 
-          className="w-full h-80 object-cover filter grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" 
-        />
-        
-        <div 
-          className={`absolute inset-0 bg-black/60 backdrop-blur-[2px] flex flex-col justify-end transition-opacity duration-500 ${hovered ? 'opacity-0' : 'opacity-100'}`}
-        >
-          <div className="p-6">
-            <h3 className="text-white text-2xl font-bold">{project.title}</h3>
-            <div className="w-10 h-0.5 bg-primary my-3"></div>
-            <p className="text-white/80 text-sm">{project.description}</p>
+    <>
+      <div 
+        ref={cardRef}
+        className="group opacity-0"
+        style={{ animationDelay: `${200 + index * 150}ms` }}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
+        <div className="relative overflow-hidden border border-primary/10">
+          <div className="absolute top-0 left-0 p-4 z-10">
+            <span className="text-xs font-mono bg-black/50 backdrop-blur-sm text-white px-3 py-1 inline-block">
+              {project.categoryLabel}
+            </span>
+          </div>
+          
+          <div className="absolute bottom-0 right-0 p-4 z-10">
+            <span className="font-mono text-xs bg-black/50 backdrop-blur-sm text-white px-3 py-1 inline-block">
+              0{index + 1}
+            </span>
+          </div>
+          
+          <img 
+            src={project.imageSrc} 
+            alt={project.title} 
+            className="w-full h-80 object-cover filter grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105" 
+          />
+          
+          <div 
+            className={`absolute inset-0 bg-black/60 backdrop-blur-[2px] flex flex-col justify-end transition-opacity duration-500 ${hovered ? 'opacity-0' : 'opacity-100'}`}
+          >
+            <div className="p-6">
+              <h3 className="text-white text-2xl font-bold">{project.title}</h3>
+              <div className="w-10 h-0.5 bg-primary my-3"></div>
+              <p className="text-white/80 text-sm">{project.description}</p>
+            </div>
           </div>
         </div>
-{/*         
-        <div className={`absolute inset-0 bg-primary/5 backdrop-blur-0 opacity-0 transition-opacity duration-500 ${hovered ? 'opacity-100' : ''} flex items-center justify-center`}>
-          <a 
-            href={project.caseStudyUrl} 
-            className="bg-primary text-primary-foreground p-4 flex items-center justify-center transform scale-0 group-hover:scale-100 transition-transform duration-500"
+        
+        <div className="mt-6 mb-12 flex justify-between items-center">
+          <div>
+            <h3 className="text-lg font-bold group-hover:text-primary transition-colors duration-300">{project.title}</h3>
+            <p className="text-sm text-muted-foreground">{project.categoryLabel}</p>
+          </div>
+          <button 
+            onClick={() => setIsCaseStudyOpen(true)}
+            className="text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center"
           >
-            <ArrowUpRight className="h-8 w-8" />
-          </a>
-        </div> */}
-      </div>
-      
-      <div className="mt-6 mb-12 flex justify-between items-center">
-        <div>
-          <h3 className="text-lg font-bold group-hover:text-primary transition-colors duration-300">{project.title}</h3>
-          <p className="text-sm text-muted-foreground">{project.categoryLabel}</p>
+            View case study
+            <ArrowRight className={`h-4 w-4 ml-1 transition-transform duration-300 ${hovered ? 'translate-x-1' : ''}`} />
+          </button>
         </div>
-        <a 
-          href={project.caseStudyUrl} 
-          className="text-sm font-medium text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center"
-        >
-          View case study
-          <ArrowRight className={`h-4 w-4 ml-1 transition-transform duration-300 ${hovered ? 'translate-x-1' : ''}`} />
-        </a>
       </div>
-    </div>
+
+      <CaseStudyModal 
+        isOpen={isCaseStudyOpen}
+        onClose={() => setIsCaseStudyOpen(false)}
+        project={project}
+      />
+    </>
   );
 };
 

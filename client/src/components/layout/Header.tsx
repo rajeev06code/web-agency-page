@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { useTheme } from "@/components/ThemeProvider";
 import { Sun, Moon, Menu, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { smoothScroll } from "@/lib/utils";
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
@@ -11,7 +12,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
+      setIsScrolled(window.scrollY > 20);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -20,6 +21,11 @@ const Header = () => {
 
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
+
+  const handleNavigation = (sectionId: string) => {
+    closeMobileMenu();
+    smoothScroll(sectionId);
+  };
 
   return (
     <header
@@ -41,28 +47,48 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-8" role="navigation" aria-label="Main navigation">
             <a
               href="#services"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavigation('services');
+              }}
               className="text-sm font-medium hover:text-primary transition-colors"
+              aria-label="Go to Services section"
             >
               Services
             </a>
             <a
               href="#work"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavigation('work');
+              }}
               className="text-sm font-medium hover:text-primary transition-colors"
+              aria-label="Go to Work section"
             >
               Work
             </a>
             <a
               href="#about"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavigation('about');
+              }}
               className="text-sm font-medium hover:text-primary transition-colors"
+              aria-label="Go to About section"
             >
               About
             </a>
             <a
               href="#testimonials"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavigation('testimonials');
+              }}
               className="text-sm font-medium hover:text-primary transition-colors"
+              aria-label="Go to Testimonials section"
             >
               Testimonials
             </a>
@@ -70,80 +96,93 @@ const Header = () => {
               variant="ghost"
               size="icon"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              aria-label="Toggle theme"
+              aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
             >
               {theme === "dark" ? (
-                <Sun className="h-5 w-5" />
+                <Sun className="h-5 w-5" aria-hidden="true" />
               ) : (
-                <Moon className="h-5 w-5" />
+                <Moon className="h-5 w-5" aria-hidden="true" />
               )}
             </Button>
-            <Button asChild className="font-accent">
-              <a href="#contact">Start a Project</a>
+            <Button
+              onClick={() => handleNavigation('contact')}
+              className="font-accent"
+              aria-label="Start a new project"
+            >
+              Start a Project
             </Button>
           </nav>
 
           {/* Mobile menu button */}
-          <div className="flex items-center space-x-2 md:hidden">
+          <div className="flex items-center space-x-2 md:hidden" role="navigation" aria-label="Mobile navigation">
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              aria-label="Toggle theme"
+              aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
             >
               {theme === "dark" ? (
-                <Sun className="h-5 w-5" />
+                <Sun className="h-5 w-5" aria-hidden="true" />
               ) : (
-                <Moon className="h-5 w-5" />
+                <Moon className="h-5 w-5" aria-hidden="true" />
               )}
             </Button>
             <Button
               variant="ghost"
               size="icon"
               onClick={toggleMobileMenu}
-              aria-label="Menu"
+              aria-label="Toggle mobile menu"
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-menu"
             >
-              <Menu className="h-6 w-6" />
+              <Menu className="h-6 w-6" aria-hidden="true" />
             </Button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden pb-4 animate-in slide-in-from-top">
+          <div 
+            id="mobile-menu"
+            className="md:hidden pb-4 animate-in slide-in-from-top"
+            role="navigation"
+            aria-label="Mobile menu"
+          >
             <div className="flex flex-col space-y-4 pt-2 pb-3">
-              <a
-                href="#services"
-                className="text-base font-medium hover:text-primary transition-colors"
-                onClick={closeMobileMenu}
+              <button
+                onClick={() => handleNavigation('services')}
+                className="text-base font-medium hover:text-primary transition-colors text-left"
+                aria-label="Go to Services section"
               >
                 Services
-              </a>
-              <a
-                href="#work"
-                className="text-base font-medium hover:text-primary transition-colors"
-                onClick={closeMobileMenu}
+              </button>
+              <button
+                onClick={() => handleNavigation('work')}
+                className="text-base font-medium hover:text-primary transition-colors text-left"
+                aria-label="Go to Work section"
               >
                 Work
-              </a>
-              <a
-                href="#about"
-                className="text-base font-medium hover:text-primary transition-colors"
-                onClick={closeMobileMenu}
+              </button>
+              <button
+                onClick={() => handleNavigation('about')}
+                className="text-base font-medium hover:text-primary transition-colors text-left"
+                aria-label="Go to About section"
               >
                 About
-              </a>
-              <a
-                href="#testimonials"
-                className="text-base font-medium hover:text-primary transition-colors"
-                onClick={closeMobileMenu}
+              </button>
+              <button
+                onClick={() => handleNavigation('testimonials')}
+                className="text-base font-medium hover:text-primary transition-colors text-left"
+                aria-label="Go to Testimonials section"
               >
                 Testimonials
-              </a>
-              <Button asChild className="font-accent w-fit">
-                <a href="#contact" onClick={closeMobileMenu}>
-                  Start a Project
-                </a>
+              </button>
+              <Button
+                onClick={() => handleNavigation('contact')}
+                className="font-accent w-fit"
+                aria-label="Start a new project"
+              >
+                Start a Project
               </Button>
             </div>
           </div>

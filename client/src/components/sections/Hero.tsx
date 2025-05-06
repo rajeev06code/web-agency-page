@@ -51,7 +51,7 @@ const Hero = () => {
               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-accent px-8 py-6 text-base">
                 <a href="#work">Explore our work</a>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-primary hover:bg-primary/5 text-primary font-accent px-8 py-6 text-base">
+              <Button asChild variant="outline" size="lg" className="border-primary hover:bg-primary/5 text-primary hover:text-primary font-accent px-8 py-6 text-base">
                 <a href="#contact">Start a project</a>
               </Button>
             </div>
