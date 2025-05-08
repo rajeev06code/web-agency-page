@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { ArrowRight,Code, Twitter, Instagram, Linkedin, Github } from "lucide-react";
+import { ArrowRight,Code, Twitter, Instagram, Linkedin, Github, Facebook } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -18,28 +18,30 @@ const Footer = () => {
               Creating exceptional digital experiences for forward-thinking businesses.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="opacity-60 hover:opacity-100 transition-opacity">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="opacity-60 hover:opacity-100 transition-opacity">
+            <a     href="https://www.instagram.com/_pixelbuilders?igsh=MXJiaTloODdpaTR0NQ=="
+                    target="_blank" className="opacity-60 hover:opacity-100 transition-opacity">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="opacity-60 hover:opacity-100 transition-opacity">
-                <Linkedin className="h-5 w-5" />
+              <a        href="https://x.com/_pixelBuilders"
+                    target="_blank" className="opacity-60 hover:opacity-100 transition-opacity">
+                <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="opacity-60 hover:opacity-100 transition-opacity">
-                <Github className="h-5 w-5" />
+           
+              <a       href="https://www.facebook.com/profile.php?id=61576192345274&mibextid=ZbWKwL"
+                    target="_blank" className="opacity-60 hover:opacity-100 transition-opacity">
+                <Facebook className="h-5 w-5" />
               </a>
+           
             </div>
           </div>
           <div>
             <h4 className="font-bold text-lg mb-4">Services</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="opacity-80 hover:opacity-100 hover:text-primary transition-all">Web Development</a></li>
-              <li><a href="#" className="opacity-80 hover:opacity-100 hover:text-primary transition-all">Mobile Development</a></li>
-              <li><a href="#" className="opacity-80 hover:opacity-100 hover:text-primary transition-all">UI/UX Design</a></li>
-              <li><a href="#" className="opacity-80 hover:opacity-100 hover:text-primary transition-all">MVP Development</a></li>
-              <li><a href="#" className="opacity-80 hover:opacity-100 hover:text-primary transition-all">Digital Strategy</a></li>
+              <li><a href="/services/web-development" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 hover:text-primary transition-all">Web Development</a></li>
+              <li><a href="/services/mobile-development" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 hover:text-primary transition-all">Mobile Development</a></li>
+              <li><a href="/services/ui-design" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 hover:text-primary transition-all">UI/UX Design</a></li>
+              <li><a href="/services/mvp-development" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 hover:text-primary transition-all">MVP Development</a></li>
+              <li><a href="/services/digital-strategy" target="_blank" rel="noopener noreferrer" className="opacity-80 hover:opacity-100 hover:text-primary transition-all">Digital Strategy</a></li>
             </ul>
           </div>
           <div>
@@ -47,9 +49,9 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><a href="#about" className="opacity-80 hover:opacity-100 hover:text-primary transition-all">About Us</a></li>
               <li><a href="#work" className="opacity-80 hover:opacity-100 hover:text-primary transition-all">Our Work</a></li>
-              <li><a href="#" className="opacity-80 hover:opacity-100 hover:text-primary transition-all">Career</a></li>
+              {/* <li><a href="#" className="opacity-80 hover:opacity-100 hover:text-primary transition-all">Career</a></li>
               <li><a href="#" className="opacity-80 hover:opacity-100 hover:text-primary transition-all">Blog</a></li>
-              <li><a href="#contact" className="opacity-80 hover:opacity-100 hover:text-primary transition-all">Contact</a></li>
+              <li><a href="#contact" className="opacity-80 hover:opacity-100 hover:text-primary transition-all">Contact</a></li> */}
             </ul>
           </div>
           <div>

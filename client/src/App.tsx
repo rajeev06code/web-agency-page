@@ -8,6 +8,11 @@ import Home from "@/pages/Home";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import TermsAndConditions from "@/pages/TermsAndConditions";
 import Blog from "@/pages/Blog";
+import WebDevelopment from "@/pages/services/WebDevelopment";
+import MobileDevelopment from "@/pages/services/MobileDevelopment";
+import UIDesign from "@/pages/services/UIDesign";
+import MVPDevelopment from "@/pages/services/MVPDevelopment";
+import DigitalStrategy from "@/pages/services/DigitalStrategy";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { SpeedInsights } from '@vercel/speed-insights/react';
@@ -38,6 +43,11 @@ function Router() {
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/terms-and-conditions" component={TermsAndConditions} />
       <Route path="/blog" component={Blog} />
+      <Route path="/services/web-development" component={WebDevelopment} />
+      <Route path="/services/mobile-development" component={MobileDevelopment} />
+      <Route path="/services/ui-design" component={UIDesign} />
+      <Route path="/services/mvp-development" component={MVPDevelopment} />
+      <Route path="/services/digital-strategy" component={DigitalStrategy} />
       <Route component={NotFound} />
     </Switch>
   );
