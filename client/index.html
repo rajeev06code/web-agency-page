@@ -30,10 +30,13 @@
     <link rel="canonical" href="https://pixelbuilders.in/">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest" />
+
     <!-- Additional SEO Meta Tags -->
     <meta name="theme-color" content="#ffffff">
     <meta name="mobile-web-app-capable" content="yes">
@@ -44,6 +47,54 @@
     <!-- Preconnect to important domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "pixelBuilders",
+      "alternateName": "pixelBuilders Studio",
+      "url": "https://pixelbuilders.in/",
+      "logo": "https://pixelbuilders.in/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/people/pixelbuilders/61576192345274/?mibextid=ZbWKwL",
+        "https://x.com/_pixelBuilders",
+        "https://www.instagram.com/_pixelbuilders"
+      ],
+      "description": "pixelBuilders Studio offers cutting-edge technology solutions, web development, and digital innovation services. Transform your ideas into reality with our expert team.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "India"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "support@pixelbuilders.in"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://pixelbuilders.in/"
+      },
+      "service": [
+        {
+          "@type": "Service",
+          "name": "Web Development",
+          "description": "Custom website and web application development services"
+        },
+        {
+          "@type": "Service",
+          "name": "Digital Innovation",
+          "description": "Cutting-edge digital solutions for modern businesses"
+        },
+        {
+          "@type": "Service",
+          "name": "Technology Consulting",
+          "description": "Expert technology consulting and strategy services"
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
