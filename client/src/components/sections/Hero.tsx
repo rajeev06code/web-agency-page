@@ -17,7 +17,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden" id="hero">
+    <section className="relative min-h-screen flex items-center overflow-hidden lg:pt-20" id="hero">
       <div className="absolute inset-0 circuit-pattern opacity-20"></div>
 
       {/* Animated background elements */}
