@@ -20,6 +20,7 @@ import { useEffect, useState } from "react";
 import { FullPageLoader } from "@/components/ui/loader";
 import { CookieConsent } from "@/components/ui/cookie-consent";
 import { getOrganizationSchema, getWebSiteSchema, getServiceSchema } from "@/lib/structured-data";
+import ContactLead from "./pages/contact-lead";
 
 // Structured data for the organization
 const organizationSchema = {
@@ -48,6 +49,7 @@ function Router() {
       <Route path="/services/ui-design" component={UIDesign} />
       <Route path="/services/mvp-development" component={MVPDevelopment} />
       <Route path="/services/digital-strategy" component={DigitalStrategy} />
+      <Route path="/contact-us" component={ContactLead} />
       <Route component={NotFound} />
     </Switch>
   );
